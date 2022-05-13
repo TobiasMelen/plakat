@@ -1,8 +1,7 @@
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
-export default defineConfig(async ({ command }) => ({
-  plugins: [
-    command === "serve" && (await import("@vitejs/plugin-react")).default(),
-  ].filter(Boolean),
-}));
+export default defineConfig({
+  plugins: [react()],
+});
